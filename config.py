@@ -42,7 +42,7 @@ START_MSG = os.environ.get("START_MESSAGE", ".\
 اول باید کانال بکاپ جوین شی تا بتونی فیلم بگیری  .\
 کانال بکاپ : \
 https://t.me/joinchat/nVWYqlrYP8w3NTAx\
-(اول باید کانال بالا عضو شید بعد دوباره فیلمی که میخواید رو بفرستید استارت بزنید )")
+ (اول باید کانال بالا عضو شید بعد دوباره فیلمی که میخواید رو بفرستید استارت بزنید ) ")
 try:
     ADMINS=[]
     for x in (os.environ.get("ADMINS", "").split()):
@@ -56,7 +56,7 @@ FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", " سلام.\
 اول باید کانال بکاپ جوین شی تا بتونی فیلم بگیری  .\
 کانال بکاپ : \
 https://t.me/joinchat/nVWYqlrYP8w3NTAx\
-(اول باید کانال بالا عضو شید بعد دوباره فیلمی که میخواید بگیرید رو انتخاب کنید ) ")
+ (اول باید کانال بالا عضو شید بعد دوباره فیلمی که میخواید بگیرید رو انتخاب کنید )  ")
 
 #set your Custom Caption here, Keep None for Disable Custom Caption
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
