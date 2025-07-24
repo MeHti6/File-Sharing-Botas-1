@@ -7,6 +7,7 @@ import pyromod.listen
 from pyrogram import Client, filters
 from pyrogram.enums import ParseMode
 from pyrogram.types import Message
+from pyrogram.handlers import MessageHandler
 from collections import defaultdict, deque, Counter
 from datetime import datetime, timedelta
 import asyncio
