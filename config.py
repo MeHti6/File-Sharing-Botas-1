@@ -37,11 +37,10 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 #start message
 START_PIC = os.environ.get("START_PIC","")
-START_MSG = os.environ.get("START_MESSAGE", """   اول باید کانال بکاپ جوین شی تا بتونی فیلم بگیری.
-
-کانال بکاپ: https://t.me/joinchat/nVWYqlrYP8w3NTAx
-
-(اول باید کانال بالا عضو شید بعد دوباره فیلمی که میخواید رو بفرستید استارت بزنید)"""
+START_MSG = os.environ.get("START_MESSAGE", (
+        "اول باید کانال بکاپ جوین شی تا بتونی فیلم بگیری.\n\n"
+        "کانال بکاپ: https://t.me/joinchat/nVWYqlrYP8w3NTAx\n\n"
+        "(اول باید کانال بالا عضو شید بعد دوباره فیلمی که میخواید رو بفرستید استارت بزنید)"
 )
 try:
     ADMINS=[]
@@ -51,11 +50,10 @@ except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
 
 #Force sub message 
-FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", """   اول باید کانال بکاپ جوین شی تا بتونی فیلم بگیری.
-
-کانال بکاپ: https://t.me/joinchat/nVWYqlrYP8w3NTAx
-
-(اول باید کانال بالا عضو شید بعد دوباره فیلمی که میخواید رو بفرستید استارت بزنید)"""
+FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", (
+        "اول باید کانال بکاپ جوین شی تا بتونی فیلم بگیری.\n\n"
+        "کانال بکاپ: https://t.me/joinchat/nVWYqlrYP8w3NTAx\n\n"
+        "(اول باید کانال بالا عضو شید بعد دوباره فیلمی که میخواید رو بفرستید استارت بزنید)"
 )
 
 #set your Custom Caption here, Keep None for Disable Custom Caption
