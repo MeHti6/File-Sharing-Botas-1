@@ -80,9 +80,15 @@ class Bot(Client):
         print("""Welcome to CodeXBotz File Sharing Bot""")
         self.username = usr_bot_me.username
 
-        self.add_handler(filters.command("start")(self.start_handler))
-        self.add_handler(filters.command("most")(self.most_handler))
-        self.add_handler(filters.all)(self.monitor_all_messages)
+        self.add_handler(
+            MessageHandler(self.start_handler, filters.command("start"))
+        )
+        self.add_handler(
+            MessageHandler(self.most_handler,  filters.command("most"))
+        )
+        self.add_handler(
+            MessageHandler(self.monitor_all_messages, filters.all)
+        )
 
         # web-response
         app = web.AppRunner(await web_server())
