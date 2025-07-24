@@ -39,11 +39,11 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 START_PIC = os.environ.get("START_PIC","")
 FORCE_MSG = os.environ.get(
     "FORCE_SUB_MESSAGE",
-    (
-        "اول باید کانال بکاپ جوین شی تا بتونی فیلم بگیری.\n\n"
-        "کانال بکاپ: https://t.me/joinchat/nVWYqlrYP8w3NTAx\n\n"
-        "(اول باید کانال بالا عضو شید بعد دوباره فیلمی که میخواید رو بفرستید استارت بزنید)"
-    )
+    """   اول باید کانال بکاپ جوین شی تا بتونی فیلم بگیری.
+
+کانال بکاپ: https://t.me/joinchat/nVWYqlrYP8w3NTAx
+
+(اول باید کانال بالا عضو شید بعد دوباره فیلمی که میخواید رو بفرستید استارت بزنید)"""
 )
 try:
     ADMINS=[]
