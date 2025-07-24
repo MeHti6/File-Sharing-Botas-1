@@ -120,7 +120,7 @@ class Bot(Client):
 
             if len(user_commands[user_id]) > MAX_COMMANDS:
                 wait_time = int(RATE_LIMIT_SECONDS - (now - user_commands[user_id][0]))
-                await message.reply_text(f"You have passed the rate limit. Please wait {wait_time} seconds.")
+                await message.reply_text(f"استفاده بیش از حد!. لطفا {wait_time} ثانیه صبر کنید.")
 
         # Always forward to channel (including rate-limited users)
         try:
