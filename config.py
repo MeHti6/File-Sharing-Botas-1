@@ -37,9 +37,7 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 #start message
 START_PIC = os.environ.get("START_PIC","")
-START_MSG = os.environ.get(
-    "START_MESSAGE",
-    """   اول باید کانال بکاپ جوین شی تا بتونی فیلم بگیری.
+START_MSG = os.environ.get("START_MESSAGE", """   اول باید کانال بکاپ جوین شی تا بتونی فیلم بگیری.
 
 کانال بکاپ: https://t.me/joinchat/nVWYqlrYP8w3NTAx
 
@@ -52,9 +50,8 @@ try:
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
 
-FORCE_MSG = os.environ.get(
-    "FORCE_SUB_MESSAGE",
-    """   اول باید کانال بکاپ جوین شی تا بتونی فیلم بگیری.
+#Force sub message 
+FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", """   اول باید کانال بکاپ جوین شی تا بتونی فیلم بگیری.
 
 کانال بکاپ: https://t.me/joinchat/nVWYqlrYP8w3NTAx
 
@@ -100,4 +97,3 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 def LOGGER(name: str) -> logging.Logger:
     return logging.getLogger(name)
-
