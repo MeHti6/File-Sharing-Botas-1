@@ -52,11 +52,6 @@ try:
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
 
-#Force sub message 
-FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "   "اول باید کانال بکاپ جوین شی تا بتونی فیلم بگیری.\n\n"
-    "کانال بکاپ: https://t.me/joinchat/nVWYqlrYP8w3NTAx\n\n"
-    "(اول باید کانال بالا عضو شید بعد دوباره فیلمی که میخواید رو بفرستید استارت بزنید)" ")
-
 #set your Custom Caption here, Keep None for Disable Custom Caption
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
 
