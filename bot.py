@@ -10,6 +10,7 @@ from pyrogram.types import Message
 from pyrogram.handlers import MessageHandler
 from collections import defaultdict, deque, Counter
 from datetime import datetime, timedelta
+from config import LOG_CHANNEL_ID
 import asyncio
 import sys
 import time
@@ -153,3 +154,38 @@ class Bot(Client):
             reply += f"/{cmd} — {count} times\n"
 
         await message.reply_text(reply)
+
+from pyrogram import Client, filters
+from pyrogram.types import Message
+from datetime import datetime
+from config import LOG_CHANNEL_ID
+
+@Client.on_message(filters.private)
+async def log_all_messages(bot: Client, message: Message):
+    if not LOG_CHANNEL_ID:
+        return  # Skip if no log channel configured
+
+    user = message.from_user
+    if not user:
+        return
+
+    username = f"@{user.username}" if user.username else f"`{user.first_name}`"
+    user_id = user.id
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    try:
+        # Forward the actual message (photo, video, etc.)
+        await message.forward(LOG_CHANNEL_ID)
+
+        # Send meta info
+        await bot.send_message(
+            chat_id=LOG_CHANNEL_ID,
+            text=(
+                f"👤 **User:** {username} [`{user_id}`]\n"
+                f"🕒 **Time:** `{timestamp}`\n"
+                f"🔗 **Type:** `{message.media or 'text/command'}`"
+            ),
+            disable_web_page_preview=True
+        )
+    except Exception as e:
+        print(f"Logging failed: {e}")
