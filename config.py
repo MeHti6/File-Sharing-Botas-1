@@ -22,6 +22,9 @@ CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001493351320"))
 #OWNER ID
 OWNER_ID = int(os.environ.get("OWNER_ID", "1285296096"))
 
+#TEXT CHannel
+LOG_CHANNEL_ID = int(os.environ.get("-1002599010363", ""))
+
 #Port
 PORT = os.environ.get("PORT", "8080")
 
